@@ -3,20 +3,6 @@ import Modal from "./components/Modal";
 import axios from 'axios';  
 
 
-// const tasks = [
-//   {
-//     id: 4,
-//     title: 'kill santa',
-//     description: 'idk',
-//     completed: true
-//   },
-//   {
-//     id: 5,
-//     title: 'become new santa',
-//     description: 'ykwtd',
-//     completed: false
-//   }
-// ]
 
 class App extends Component {
   constructor(props) {
@@ -90,7 +76,6 @@ class App extends Component {
 
   handleSubmit = item => {
     this.toggle()
-    // alert('the feck is rung with this betch!', JSON.stringify(item))
     if (item.id) {
       // if old post to edit and submit
       axios
@@ -105,7 +90,6 @@ class App extends Component {
   };
 
   handleDelete = item => {
-    // alert('the feck is rung with this betch!', JSON.stringify(item))
     axios
       .delete(`http://localhost:8000/api/tasks/${item.id}/`)
       .then(res => this.refreshList());
